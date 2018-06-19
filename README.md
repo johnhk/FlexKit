@@ -46,17 +46,13 @@ angular-starter/
  │   │
  │   ├──app/                                    * WebApp: folder
  │   │   ├──components/
- │   │   │    ├──component-example/
- │   │   │    │     ├──example.component.css    * our list of icons from www.favicon-generator.org
- │   │   │    │     ├──example.component.html   * our list of icons from www.favicon-generator.org
- │   │   │    │     └──example.component.ts     * for humans to know who the developers are
- │   │   │    ├──global_styles.scss             * our list of icons from www.favicon-generator.org
- │   │   │    ├──global_styles.scss             * our list of icons from www.favicon-generator.org
- │   │   │    └──styles.css                     * for humans to know who the developers are
+ │   │   │    └──component-example/
+ │   │   │         ├──example.component.css    * our list of icons from www.favicon-generator.org
+ │   │   │         ├──example.component.html   * our list of icons from www.favicon-generator.org
+ │   │   │         └──example.component.ts     * for humans to know who the developers are
  │   │   ├──app.component.css                   * a simple test of components in app.component.ts
  │   │   ├──app.component.html                  * a simple test of components in app.component.ts
  │   │   ├──app.component.ts                    * a simple test of components in app.component.ts
- │   │   ├──app.component.spec.ts               * a simple test of components in app.component.ts
  │   │   ├──app.module.ts                       * a simple end-to-end test for /
  │   │   └──appscss.component.scss              * a simple version of our App component components
  │   │
