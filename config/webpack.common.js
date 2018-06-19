@@ -85,7 +85,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Angular Webpack',
       name: 'index.html',
-      template: 'src/index.tpl.html'
+      template: 'src/index.html'
     })
   ]
 
