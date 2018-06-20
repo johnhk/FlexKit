@@ -30,7 +30,7 @@ We use the component approach in our starter. This is the new standard for devel
 ````    
 angular-starter/
  ├──config/                        * our configuration
- │   │                              (note: you can load your own config file, just set the evn ANGULAR_CONF_FILE with the path of your own file)
+ │   │                              
  |   ├──helpers.js                 * helper functions for our configuration files
  │   ├──webpack.common.js          * common tasks for webpack build process shared for dev and prod
  │   ├──webpack.dev.js             * our development webpack config
@@ -42,39 +42,135 @@ angular-starter/
  │   ├──tsconfig.json              * typescript config used outside webpack
  │   ├──tslint.json                * typescript lint config
  │   ├──polyfills.ts               * our polyfills file
- │   ├──vendor.ts                  * our polyfills file
+ │   ├──vendor.ts                  * our vendor specific file
  │   │
  │   ├──app/                                    * WebApp: folder
  │   │   ├──components/
- │   │   │    └──component-example/
- │   │   │         ├──example.component.css    * our list of icons from www.favicon-generator.org
- │   │   │         ├──example.component.html   * our list of icons from www.favicon-generator.org
- │   │   │         └──example.component.ts     * for humans to know who the developers are
- │   │   ├──app.component.css                   * a simple test of components in app.component.ts
- │   │   ├──app.component.html                  * a simple test of components in app.component.ts
- │   │   ├──app.component.ts                    * a simple test of components in app.component.ts
- │   │   ├──app.module.ts                       * a simple end-to-end test for /
- │   │   └──appscss.component.scss              * a simple version of our App component components
+ │   │   │    └──component-example/            * Folder holding specific component called exsample
+ │   │   │         ├──example.component.css    * component specific css 
+ │   │   │         ├──example.component.html   * component template
+ │   │   │         └──example.component.ts     * example component TypeScript file
+ │   │   ├──app.component.css                   * css specific for app-component
+ │   │   ├──app.component.html                  * template for app-component
+ │   │   ├──app.component.ts                    * The Main app component. Container for the app
+ │   │   ├──app.module.ts                       * Root module that you bootstrap to launch the applicatio
+ │   │   └──appscss.component.scss              * \\ TODO
  │   │
  │   └──assets/                    * static assets are served here
  │       ├──css/
- │       │   ├──global_styles.scss * our list of icons from www.favicon-generator.org
- │       │   └──styles.css         * for humans to know who the developers are
+ │       │   ├──global_styles.scss * \\ TODO
+ │       │   └──styles.css         * \\ TODO
  │       ├──images/
- │       │   └──angular.png        * for humans to know who the developers are
+ │       │   └──angular.png        * \\ TODO
  │       ├──robots.txt             * for search engines to crawl your website
  │       └──humans.txt             * for humans to know who the developers are
  │
  │
- ├──typedoc.json                   * typescript documentation generator
- ├──tsconfig.json                  * typescript config used outside webpack
- ├──tsconfig.webpack.json          * config that webpack uses for typescript
+ ├──.editorconfig                  * configuration file for EditorConfig extension
+ ├──.gitignore                     * Git configuration file. Specifies intentionally untracked files to ignore
+ ├──readme.md                      * Markdown file used to generate the html documnetation or summary of a projects
  ├──package.json                   * what npm uses to manage its dependencies
  ├──package.lock.json              * \\TODO what npm uses to manage its dependencies
  └──webpack.config.js              * webpack main configuration file
 
 ````
 
+# Package.json
+
+## Scripts
+
+- start
+- prod
+- build
+- clean
+
+## dependencies
+- @angular/common
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/common "npm")  When you want to use NgIf, NgFor
+- @angular/compiler
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/compiler "npm") \\TODO
+- @angular/core
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/core "npm")  Low level 'core' features in Angular such as Types, Decorators, component, Directives ...
+- @angular/forms
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/forms "npm")  When you want to build reactive forms or When you want to build template driven forms (includes NgModel)
+- @angular/http
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/http "npm")  When you want to talk to a server
+- @angular/platform-browser
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/platform-browser "npm")  When you want to run your app in a browser
+- @angular/platform-browser-dynamic
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/platform-browser-dynamic "npm")  \\TODO When you want to run your app in a browse
+- @angular/router
+  - vesion: ^6.0.5 - [Link to NPM](https://www.npmjs.com/package/@angular/router "npm")  When you want to use RouterLink, .forRoot(), and .forChild()
+- bootstrap
+  - vesion: ^4.1.1 - [Link to NPM](https://www.npmjs.com/package/bootstrap "npm")  
+  Sleek, intuitive, and powerful front-end framework for faster and easier web development
+- core-js
+  - vesion: ^2.5.5 - [Link to NPM](https://www.npmjs.com/package/core-js "npm")  
+  Modular standard library for JavaScript. Includes polyfills for ECMAScript 5, ECMAScript 6: promises, symbols, collections, iterators, typed arrays, ECMAScript 7+ proposals, setImmediate, etc. Some additional features such as dictionaries or extended partial application. You can require only needed features or use it without global namespace pollution.
+- optimize-css-assets-webpack-plugin
+  - vesion: ^4.0.1 - [Link to NPM](https://www.npmjs.com/package/optimize-css-assets-webpack-plugin "npm")  
+  A Webpack plugin to optimize \ minimize CSS assets.  It will search for CSS assets during the Webpack build and will optimize \ minimize the CSS (by default it uses cssnano but a custom CSS processor can be specified).
+- rxjs
+  - vesion: ^6.1.0 - [Link to NPM](https://www.npmjs.com/package/rxjs "npm")  
+  The Reactive Extensions for JavaScript (RxJS) is a set of libraries for composing asynchronous and event-based programs using observable sequences and fluent query operators that many of you already know by Array#extras in JavaScript. Using RxJS, developers represent asynchronous data streams with Observables, query asynchronous data streams using our many operators, and parameterize the concurrency in the asynchronous data streams using Schedulers. Simply put, RxJS = Observables + Operators + Schedulers.
+- zone.js
+  - vesion: ^0.8.26 - [Link to NPM](https://www.npmjs.com/package/zone.js "npm")  
+  A Zone is an execution context that persists across async tasks. You can think of it as thread-local storage for JavaScript VMs. zone.js patches the async APIs described above, but those patches will have some overhead. Starting from zone.js v0.8.9, you can choose which web API module you want to patch
+
+## devDependencies
+
+- @types/node
+	- ^10.0.4 - [Link to NPM](https://www.npmjs.com/package/@types/node "npm")  This package contains type definitions for Node.js
+- angular2-template-loader
+	- ^0.6.2 - [Link to NPM](https://www.npmjs.com/package/angular2-template-loader "npm")  Chain-to loader for webpack that inlines all html and style's in angular2 components.
+- awesome-typescript-loader
+	- ^5.0.0 - [Link to NPM](https://www.npmjs.com/package/awesome-typescript-loader "npm")  Awesome TypeScript loader for webpack
+- cross-env
+	- ^5.1.4 - [Link to NPM](https://www.npmjs.com/package/cross-env "npm")  Most Windows command prompts will choke when you set environment variables with NODE_ENV=production like that. (The exception is Bash on Windows, which uses native Bash.) Similarly, there's a difference in how windows and POSIX commands utilize environment variables. With POSIX, you use: $ENV_VAR and on windows you use %ENV_VAR%. cross-env makes it so you can have a single command without worrying about setting or using the environment variable properly for the platform. Just set it like you would if it's running on a POSIX system, and cross-env will take care of setting it properly.
+- css-loader
+	- ^0.28.11 - [Link to NPM](https://www.npmjs.com/package/css-loader "npm")  The css-loader interprets @import and url() like import/require() and will resolve them.
+- file-loader
+	- ^1.1.11 - [Link to NPM](https://www.npmjs.com/package/file-loader "npm")  Instructs webpack to emit the required object as file and to return its public URL
+- html-loader
+	- ^0.5.5 - [Link to NPM](https://www.npmjs.com/package/html-loader "npm")  Exports HTML as string. HTML is minimized when the compiler demands.
+- html-webpack-plugin
+	- ^3.2.0 - [Link to NPM](https://www.npmjs.com/package/html-webpack-plugin "npm")  Plugin that simplifies creation of HTML files to serve your bundles
+- mini-css-extract-plugin
+	- ^0.4.0 - [Link to NPM](https://www.npmjs.com/package/mini-css-extract-plugin "npm")  This plugin extract CSS into separate files. It creates a CSS file per JS file which contains CSS. It supports On-Demand-Loading of CSS and SourceMaps. It builds on top of a new webpack v4 feature (module types) and requires webpack 4 to work.
+- node-sass
+	- ^4.9.0 - [Link to NPM](https://www.npmjs.com/package/node-sass "npm")  Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass. It allows you to natively compile .scss files to css at incredible speed and automatically via a connect middleware.
+- null-loader
+	- ^0.1.1 - [Link to NPM](https://www.npmjs.com/package/null-loader "npm")  A loader that returns an empty module.
+- raw-loader
+	- ^0.5.1 - [Link to NPM](https://www.npmjs.com/package/raw-loader "npm")  A loader for webpack that allows importing files as a String
+- rimraf
+	- ^2.6.2 - [Link to NPM](https://www.npmjs.com/package/rimraf "npm")  The UNIX command rm -rf for node.
+- sass-loader
+	- ^7.0.1 - [Link to NPM](https://www.npmjs.com/package/sass-loader "npm")  WebPack loader. Loads a Sass/SCSS file and compiles it to CSS
+- style-loader
+	- ^0.21.0 - [Link to NPM](https://www.npmjs.com/package/style-loader "npm")  Adds CSS to the DOM by injecting a `<style>` tag
+- to-string-loader
+	- ^1.1.5 - [Link to NPM](https://www.npmjs.com/package/to-string-loader "npm")  to-string loader for webpack
+- tslint
+	- ^5.10.0 - [Link to NPM](https://www.npmjs.com/package/tslint "npm")  TSLint is an extensible static analysis tool that checks TypeScript code for readability, maintainability, and functionality errors. It is widely supported across modern editors & build systems and can be customized with your own lint rules, configurations, and formatters.
+- tslint-config-airbnb
+	- ^5.8.0 - [Link to NPM](https://www.npmjs.com/package/tslint-config-airbnb "npm")  A TSLint config for [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript, "Airbnb JavaScript Style Guide")
+- tslint-loader
+	- ^3.6.0 - [Link to NPM](https://www.npmjs.com/package/tslint-loader "npm")  Tslint loader for Webpack.
+- typescript
+	- ^2.8.3 - [Link to NPM](https://www.npmjs.com/package/typescript "npm")  TypeScript is a language for application-scale JavaScript. TypeScript adds optional types, classes, and modules to JavaScript. TypeScript supports tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
+- uglifyjs-webpack-plugin
+	- ^1.2.5 - [Link to NPM](https://www.npmjs.com/package/uglifyjs-webpack-plugin "npm")  WebPack Plugin. This plugin uses UglifyJS v3 (`uglify-es`) to minify your JavaScript
+- webpack
+	- ^4.8.3 - [Link to NPM](https://www.npmjs.com/package/webpack "npm")  webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+- webpack-bundle-analyzer
+	- ^2.11.1 - [Link to NPM](https://www.npmjs.com/package/webpack-bundle-analyzer "npm")  Visualize size of webpack output files with an interactive zoomable treemap.
+- webpack-cli
+	- ^2.0.14 - [Link to NPM](https://www.npmjs.com/package/webpack-cli "npm")  Webpack CLI encapsulates all code related to CLI handling. It captures options and sends them to webpack compiler. You can also find functionality for initializing a project and migrating between versions
+- webpack-dev-server
+	- ^3.1.4 - [Link to NPM](https://www.npmjs.com/package/webpack-dev-server "npm")  Use webpack with a development server that provides live reloading. This should be used for development only. It uses webpack-dev-middleware under the hood, which provides fast in-memory access to the webpack assets.
+- webpack-merge
+	- ^4.1.2" - [Link to NPM](https://www.npmjs.com/package/webpack-merge "npm")  webpack-merge provides a merge function that concatenates arrays and merges objects creating a new object. If functions are encountered. it will execute them, run the results through the algorithm, and then wrap the returned values within a function again. This behavior is particularly useful in configuring webpack although it has uses beyond it. Whenever you need to merge configuration objects, webpack-merge can come in handy
 
 ## MNotes
 - some notes
@@ -108,375 +204,8 @@ npm i -g typescript tslint
 
 To get more help .....
 
+@startuml
 
-# Getting Started
-## Dependencies
-What you need to run this app:
-* `node` and `npm` (`brew install node`)
-* Ensure you're running the latest versions Node `v8.x.x`+ (or `v9.x.x`) and NPM `5.x.x`+
+Bob -> Alice: Hello!
 
-> If you have `nvm` installed, which is highly recommended (`brew install nvm`) you can do a `nvm install --lts && nvm use` in `$` to run with the latest Node LTS. You can also have this `zsh` done for you [automatically](https://github.com/creationix/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file)
-
-Once you have those, you should install these globals with `npm install --global`:
-* `typescript` (`npm install --global typescript`)
-* `tslint` (`npm install --global tslint@4.5.1`)
-
-## Installing
-* `fork` this repo
-* `clone` your fork
-* `npm install webpack-dev-server rimraf webpack -g` to install required global dependencies
-* `npm install` to install all dependencies or `yarn`
-* `npm run server` to start the dev server in another tab
-
-## Running the app
-After you have installed all dependencies you can now run the app. Run `npm run-script start` to start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you
-
-### server
-```bash
-# development
-npm run server
-# production
-npm run build:prod
-npm run server:prod
-```
-
-## Other commands
-
-### build files
-```bash
-# development
-npm run build:dev
-# production (jit)
-npm run build:prod
-# AoT
-npm run build:aot
-```
-
-### hot module replacement
-```bash
-npm run server:dev:hmr
-```
-
-### watch and build files
-```bash
-npm run watch
-```
-
-### run unit tests
-```bash
-npm run test
-```
-
-### watch and run our tests
-```bash
-npm run watch:test
-```
-
-### run end-to-end tests
-```bash
-# update Webdriver (optional, done automatically by postinstall script)
-npm run webdriver:update
-# this will start a test server and launch Protractor
-npm run e2e
-```
-
-### continuous integration (run unit tests and e2e tests together)
-```bash
-# this will test both your JIT and AoT builds
-npm run ci
-```
-
-### run Protractor's elementExplorer (for end-to-end)
-```bash
-npm run e2e:live
-```
-
-### build Docker
-```bash
-npm run build:docker
-```
-
-# Configuration
-Configuration files live in `config/` we are currently using webpack, karma, and protractor for different stages of your application
-
-# AoT Don'ts
-The following are some things that will make AoT compile fail.
-
-- Don’t use require statements for your templates or styles, use styleUrls and templateUrls, the angular2-template-loader plugin will change it to require at build time.
-- Don’t use default exports.
-- Don’t use `form.controls.controlName`, use `form.get(‘controlName’)`
-- Don’t use `control.errors?.someError`, use `control.hasError(‘someError’)`
-- Don’t use functions in your providers, routes or declarations, export a function and then reference that function name
-- @Inputs, @Outputs, View or Content Child(ren), Hostbindings, and any field you use from the template or annotate for Angular should be public
-
-For more detailed guide on AoT's Do's and Don'ts refer to https://github.com/rangle/angular-2-aot-sandbox
-
-# External Stylesheets
-Any stylesheets (Sass or CSS) placed in the `src/styles` directory and imported into your project will automatically be compiled into an external `.css` and embedded in your production builds.
-
-For example to use Bootstrap as an external stylesheet:
-1) Create a `styles.scss` file (name doesn't matter) in the `src/styles` directory.
-2) `npm install` the version of Boostrap you want.
-3) In `styles.scss` add `@import '~bootstrap/scss/bootstrap.scss';`
-4) In `src/app/app.module.ts` add underneath the other import statements: `import '../styles/styles.scss';`
-
-# Contributing
-You can include more examples as components but they must introduce a new concept such as `Home` component (separate folders), and Todo (services). I'll accept pretty much everything so feel free to open a Pull-Request
-
-# TypeScript
-> To take full advantage of TypeScript with autocomplete you would have to install it globally and use an editor with the correct TypeScript plugins.
-
-## Use latest TypeScript compiler
-TypeScript 2.7.x includes everything you need. Make sure to upgrade, even if you installed TypeScript previously.
-
-```
-npm install --global typescript
-```
-
-## Use a TypeScript-aware editor
-We have good experience using these editors:
-
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Webstorm 2018.1](https://www.jetbrains.com/webstorm/download/)
-* [Atom](https://atom.io/) with [TypeScript plugin](https://atom.io/packages/atom-typescript)
-* [Sublime Text](http://www.sublimetext.com/3) with [Typescript-Sublime-Plugin](https://github.com/Microsoft/Typescript-Sublime-plugin#installation)
-
-### Visual Studio Code + Debugger for Chrome
-> Install [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and see docs for instructions to launch Chrome
-
-The included `.vscode` automatically connects to the webpack development server on port `3000`.
-
-# Types
-> When you include a module that doesn't include Type Definitions inside of the module you can include external Type Definitions with @types
-
-i.e, to have youtube api support, run this command in terminal:
-```shell
-npm i @types/youtube @types/gapi @types/gapi.youtube
-```
-In some cases where your code editor doesn't support Typescript 2 yet or these types weren't listed in ```tsconfig.json```, add these to **"src/custom-typings.d.ts"** to make peace with the compile check:
-```es6
-import '@types/gapi.youtube';
-import '@types/gapi';
-import '@types/youtube';
-```
-
-## Custom Type Definitions
-When including 3rd party modules you also need to include the type definition for the module
-if they don't provide one within the module. You can try to install it with @types
-
-```
-npm install @types/node
-npm install @types/lodash
-```
-
-If you can't find the type definition in the registry we can make an ambient definition in
-this file for now. For example
-
-```typescript
-declare module "my-module" {
-  export function doesSomething(value: string): string;
-}
-```
-
-
-If you're prototyping and you will fix the types later you can also declare it as type any
-
-```typescript
-declare var assert: any;
-declare var _: any;
-declare var $: any;
-```
-
-If you're importing a module that uses Node.js modules which are CommonJS you need to import as
-
-```typescript
-import * as _ from 'lodash';
-```
-
-
-# Frequently asked questions
-* What's the current browser support for Angular?
-  * Please view the updated list of [browser support for Angular](https://github.com/gdi2290/awesome-angular#current-browser-support-for-angular)
-* Why is my service, aka provider, is not injecting parameter correctly?
-  * Please use `@Injectable()` for your service for typescript to correctly attach the metadata (this is a TypeScript problem)
-* Where do I write my tests?
-  * You can write your tests next to your component files. See [`/src/app/home/home.component.spec.ts`](/src/app/home/home.component.spec.ts)
-* How do I start the app when I get `EACCES` and `EADDRINUSE` errors?
-  * The `EADDRINUSE` error means the port `3000` is currently being used and `EACCES` is lack of permission for webpack to build files to `./dist/`
-* How to use `sass` for css?
- *  * `loaders: ['raw-loader','sass-loader']` and `@Component({ styleUrls: ['./filename.scss'] })` see Wiki page [How to include SCSS in components](https://github.com/gdi2290/angular-starter/wiki/How-to-include-SCSS-in-components), or issue [#136](https://github.com/gdi2290/angular-starter/issues/136) for more information.
-* How do I test a Service?  
-  * See issue [#130](https://github.com/gdi2290/angular-starter/issues/130#issuecomment-158872648)
-* How do I add `vscode-chrome-debug` support?
-  * The VS Code chrome debug extension support can be done via `launch.json` see issue [#144](https://github.com/gdi2290/angular-starter/issues/144#issuecomment-164063790)
-* How do I make the repo work in a virtual machine?
-  * You need to use `0.0.0.0` so revert these changes [#205](https://github.com/gdi2290/angular-starter/pull/205/files)
-* What are the naming conventions for Angular?
-  * please see issue [#185](https://github.com/gdi2290/angular-starter/issues/185) and PR [196](https://github.com/gdi2290/angular-starter/pull/196)
-* How do I include bootstrap or jQuery?
-  * please see issue [#215](https://github.com/gdi2290/angular-starter/issues/215) and [#214](https://github.com/gdi2290/angular-starter/issues/214#event-511768416)
-* How do I async load a component?
-  * see wiki [How-do-I-async-load-a-component-with-AsyncRoute](https://github.com/gdi2290/angular-starter/wiki/How-do-I-async-load-a-component-with-AsyncRoute)
-* Error: Cannot find module 'tapable'
-  * Remove `node_modules/` and run `npm cache clean` then `npm install`
-* How do I turn on Hot Module Replacement
-  * Run `npm run server:dev:hmr`
-* `RangeError: Maximum call stack size exceeded`
-  * This is a problem with minifying Angular and it's recent JIT templates. If you set `mangle` to `false` then you should be good.
-* Why is the size of my app larger in development?
-  * We are using inline source-maps and hot module replacement which will increase the bundle size.
-* If you're in China
-  * check out https://github.com/cnpm/cnpm
-* node-pre-gyp ERR in npm install (Windows)
-  * often happens when you're behind proxy and proxy wasn't configured in the npm as it tries to download binary package from the github and if it fails to do so, it will try to compile node-sass from the source codes
-  * install Python x86 version 2.x and on windows see issue [#626](https://github.com/gdi2290/angular-starter/issues/626)
-* `Error:Error: Parse tsconfig error [{"messageText":"Unknown compiler option 'lib'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'strictNullChecks'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'baseUrl'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'paths'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'types'.","category":1,"code":5023}]`
-  * remove `node_modules/typescript` and run `npm install typescript@beta`. This repo now uses ts 2.0
-* "There are multiple modules with names that only differ in casing"
-  * change `c:\[path to angular-starter]` to `C:\[path to angular-starter]` see [926#issuecomment-245223547](https://github.com/gdi2290/angular-starter/issues/926#issuecomment-245223547)
-
-# Support, Questions, or Feedback
-> Contact us anytime for anything about this repo or Angular
-
-* [Twitter: @TipeIO](https://twitter.com/TipeIO)
-* [Gitter: AngularClass/angular2-webpack-starter](https://gitter.im/angularclass/angular2-webpack-starter)
-
-# Deployment
-
-## Docker
-
-To run project you only need host machine with **operating system** with installed **git** (to clone this repo)
-and [docker](https://www.docker.com/) and thats all - any other software is not needed
-(other software like node.js etc. will be automatically downloaded and installed inside docker container during build step based on dockerfile).
-
-### Install docker
-
-#### MacOS:
-
-`brew cask install docker`
-
-And run docker by Mac bottom menu> launchpad > docker (on first run docker will ask you about password)
-
-#### Ubuntu:
-
-```
-sudo apt-get update
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-sudo apt-get update
-apt-cache policy docker-engine
-sudo apt-get install -y docker-engine
-sudo systemctl status docker  # test: should be ‘active’
-```
-And add your user to docker group (to avoid `sudo` before using `docker` command in future):
-```
-sudo usermod -aG docker $(whoami)
-```
-and logout and login again.
-
-### Build image
-
-Because *node.js* is big memory consumer you need 1-2GB RAM or virtual memory to build docker image
-(it was successfully tested on machine with 512MB RAM + 2GB virtual memory - building process take 7min)
-
-Go to main project folder. To build image type:
-
-`docker build -t angular-starter .`
-
-The **angular-starter** name used in above commands is only example image name.
-To remove intermediate images created by docker on build process, type:
-
-`docker rmi -f $(docker images -f "dangling=true" -q)`
-
-### Run image
-
-To run created docker image on [localhost:8080](localhost:8080) type (parameter `-p 8080:80` is host:container port mapping)
-
-`docker run --name angular-starter -p 8080:80 angular-starter &`
-
-And that's all, you can open browser and go to [localhost:8080](localhost:8080).
-
-### Build and Run image using docker-compose
-
-To create and run docker image on [localhost:8080](localhost:8080) as part of large project you may use **docker-compose**. Type 
-
-`docker-compose up`
-
-And that's all, you can open browser and go to [localhost:8080](localhost:8080).
-
-
-### Run image on sub-domain
-
-If you want to run image as virtual-host on sub-domain you must setup [proxy](https://github.com/jwilder/nginx-proxy). You should install proxy and set sub-domain in this way:
-
- ```
- docker run -d -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy:alpine
- ```
-
- And in your `/etc/hosts` file (linux) add line: `127.0.0.1 angular-starter.your-domain.com` or in yor hosting add
- folowing DNS record (wildchar `*` is handy because when you add new sub-domain in future, you don't need to touch/add any DNS record)
-
- ```
- Type: CNAME
- Hostname: *.your-domain.com
- Direct to: your-domain.com
- TTL(sec): 43200
- ```
-
-And now you are ready to run image on subdomain by:
-
-```
-docker run -e VIRTUAL_HOST=angular-starter.your-domain.com --name angular-starter angular-starter &
-```
-
-### Login into docker container
-
-`docker exec -t -i angular-starter /bin/bash`
-
-## Netlify
-
-You can quickly create a free site to get started using this
-starter kit in production on [Netlify](https://www.netlify.com/):
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AngularClass/angular-starter)
-
-### Optional Integration with SonarQube (for continous code quality)
-Assuming you have SonarQube 5.5.6 (LTS) installed
-* Setup SonarQube with the [Sonar Typescript plugin](https://github.com/Pablissimo/SonarTsPlugin#installation) and the Generic Test Coverage plugin https://docs.sonarqube.org/display/PLUG/Generic+Test+Coverage
-* Install sonar-scanner globally 
-```bash
-npm install --global sonar-scanner
-```
-* Install the [Karma plugin for sonarqube](https://www.npmjs.com/package/karma-sonarqube-unit-reporter) as a dev dependency 
-```bash
-npm install karma-sonarqube-unit-reporter --save-dev
-```
-* Sonar Host URL configuration:
-Update [`sonar-project.properties`](sonar-project.properties) file for the property `sonar.host.url` to point to your SonarQube server. By default this assumes that the SonarQube server is running locally using the default port
-```
-sonar.host.url=<Sonar Host URL and Port>
-```
-* Run the unit tests with sonar reporter enabled
-```bash
-npm run test:sonar
-```
-* The test results collected in the results folder in the sonar compatible format
-* Push results to SonarCube
-```bash
-sonar-scanner
-``` 
-* If working with SonarQube 6.x it supports [Generic Test Data](https://docs.sonarqube.org/display/SONAR/Generic+Test+Data)
-* Modify the [karma.conf.js](config/karma.config.js) to set the appropriate version of the sonarQube
-```es6
-sonarQubeUnitReporter: {
-  sonarQubeVersion: '6.x',
-}
-```
-___
-
-enjoy — [**PatrickJS**](https://twitter.com/gdi2290)
-
-___
-
-# License
- [MIT](/LICENSE)
+@enduml

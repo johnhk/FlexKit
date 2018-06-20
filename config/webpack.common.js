@@ -13,7 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
-
+  stats: "verbose",
   module: {
     rules: [
       {
